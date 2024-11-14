@@ -5,7 +5,7 @@ import {
   createSalchipapa,
   updateSalchipapa,
   deleteSalchipapa,
-} from "../controller/SalchipapaControllers";
+} from "../controller/SalchipapaController";
 
 const SalchipapaRoutes = Router();
 
@@ -18,7 +18,7 @@ const SalchipapaRoutes = Router();
 
 /**
  * @swagger
- * /api/products:
+ * /api/salchipapas:
  *   get:
  *     summary: Obtener todos los productos
  *     tags: [Products]
@@ -30,7 +30,7 @@ SalchipapaRoutes.get("/", getAllSalchipapa);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/salchipapas/{id}:
  *   get:
  *     summary: Obtener un producto por ID
  *     tags: [Products]
@@ -51,7 +51,7 @@ SalchipapaRoutes.get("/:id", getSalchipapaById);
 
 /**
  * @swagger
- * /api/products:
+ * /api/salchipapas:
  *   post:
  *     summary: Crear un nuevo producto
  *     tags: [Products]
@@ -82,7 +82,7 @@ SalchipapaRoutes.post("/", createSalchipapa);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/salchipapas/{id}:
  *   put:
  *     summary: Actualizar un producto existente
  *     tags: [Products]
@@ -118,7 +118,7 @@ SalchipapaRoutes.put("/:id", updateSalchipapa);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/salchipapas/{id}:
  *   delete:
  *     summary: Eliminar un producto
  *     tags: [Products]

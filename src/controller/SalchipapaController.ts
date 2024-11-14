@@ -5,7 +5,7 @@ import { Salchipapa } from "../entities/Salchipapa";
 const productRepository = AppDataSource.getRepository(Salchipapa);
 
 // GET - Obtener Todos los Productos
-export const getAllProducts = async(red: Request, res: Response) => {
+export const getAllSalchipapa = async(red: Request, res: Response) => {
   try {
     const products = await productRepository.find();
     res.json(products);
@@ -15,7 +15,7 @@ export const getAllProducts = async(red: Request, res: Response) => {
 };
 
 // GET by ID - Obetener Producto por ID
-export const getProductById = async(req: Request, res: Response) => {
+export const getSalchipapaById = async(req: Request, res: Response) => {
   try {
     const product = await productRepository.findOneBy({
       id: parseInt(req.params.id),
@@ -32,7 +32,7 @@ export const getProductById = async(req: Request, res: Response) => {
 };
 
 // POST - Crear un nuevo Producto
-export const createProduct = async(req: Request, res: Response) => {
+export const createSalchipapa = async(req: Request, res: Response) => {
   try {
     const { name, description, price } = req.body;
     const product = new Salchipapa();
@@ -48,7 +48,7 @@ export const createProduct = async(req: Request, res: Response) => {
 };
 
 // PUT - Actualizar un Producto existente
-export const updateProduct = async(req: Request, res: Response) => {
+export const updateSalchipapa = async(req: Request, res: Response) => {
   try {
     const { name, description, price } = req.body;
     const product = await productRepository.findOneBy({
@@ -71,7 +71,7 @@ export const updateProduct = async(req: Request, res: Response) => {
 };
 
 // DELETE - Borrar un Producto
-export const deleteProduct = async(req: Request, res: Response) => {
+export const deleteSalchipapa = async(req: Request, res: Response) => {
   try {
     const product = await productRepository.findOneBy({
       id: parseInt(req.params.id),
